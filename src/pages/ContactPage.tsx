@@ -64,12 +64,6 @@ ${formData.message}
       description: "Get in touch for any inquiries"
     },
     {
-      icon: Phone,
-      label: "Phone",
-      value: "+1 (555) 123-4567",
-      description: "Mon-Fri, 9AM-6PM EST"
-    },
-    {
       icon: MapPin,
       label: "Location",
       value: "Remote-First",
@@ -111,7 +105,7 @@ ${formData.message}
       {/* Contact Methods Grid */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {contactInfo.map((info, index) => (
               <Card 
                 key={info.label}

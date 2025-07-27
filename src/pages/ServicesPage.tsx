@@ -1,5 +1,7 @@
 
 import { useState, useEffect } from "react";
+import CodeAnimation from "../components/CodeAnimation";
+import LinesAnimation from "../components/LinesAnimation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -133,7 +135,9 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-background to-muted/30">
+      <section className="relative py-20 bg-gradient-to-br from-background to-muted/30 overflow-hidden">
+        <CodeAnimation />
+        <LinesAnimation />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-4xl md:text-6xl font-poppins font-bold mb-6">
