@@ -42,15 +42,25 @@ const ContactPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Form submission logic would go here
+    // Create mailto link to send email
+    const subject = encodeURIComponent(`Contact Form Submission from ${formData.name}`);
+    const body = encodeURIComponent(`
+Name: ${formData.name}
+Email: ${formData.email}
+Company: ${formData.company}
+
+Message:
+${formData.message}
+    `);
+    
+    window.location.href = `mailto:aayush.badola2@gmail.com?subject=${subject}&body=${body}`;
   };
 
   const contactInfo = [
     {
       icon: Mail,
       label: "Email",
-      value: "hello@defylabs.com",
+      value: "aayush.badola2@gmail.com",
       description: "Get in touch for any inquiries"
     },
     {

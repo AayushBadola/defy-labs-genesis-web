@@ -25,6 +25,7 @@ const ProjectsPage = () => {
         "3-month early trend detection",
         "40% competitive advantage"
       ],
+      image: "/lovable-uploads/ebcd58b8-1eea-43a1-a420-563e7c200fbb.png",
       tags: ["AI", "Predictive Analytics", "Market Research"],
       color: "from-blue-500 to-purple-600"
     },
@@ -39,6 +40,7 @@ const ProjectsPage = () => {
         "65% higher click-through rates",
         "280% social media growth"
       ],
+      image: "/lovable-uploads/ebcd58b8-1eea-43a1-a420-563e7c200fbb.png",
       tags: ["Content Marketing", "A/B Testing", "Optimization"],
       color: "from-green-500 to-teal-600"
     },
@@ -53,6 +55,7 @@ const ProjectsPage = () => {
         "75% reduction in acquisition cost",
         "12x ROI improvement"
       ],
+      image: "/lovable-uploads/ebcd58b8-1eea-43a1-a420-563e7c200fbb.png",
       tags: ["Funnel Optimization", "Automation", "CRO"],
       color: "from-purple-500 to-pink-600"
     },
@@ -64,19 +67,19 @@ const ProjectsPage = () => {
       icon: Search,
       results: [
         "Identified 23 market gaps",
-        "200% market share growth",
+        "150% increase in market reach",
         "6-month competitive lead"
       ],
+      image: "/lovable-uploads/ebcd58b8-1eea-43a1-a420-563e7c200fbb.png",
       tags: ["Competitive Analysis", "Market Research", "Strategy"],
       color: "from-orange-500 to-red-600"
     }
   ];
 
   const stats = [
-    { label: "Projects Completed", value: "150+", icon: "🚀" },
-    { label: "Client Success Rate", value: "98%", icon: "✨" },
-    { label: "Average ROI Increase", value: "340%", icon: "📈" },
-    { label: "Industries Served", value: "25+", icon: "🌍" }
+    { label: "Projects Completed", value: "Multiple", icon: "🚀" },
+    { label: "High Client Success Rate", value: "90%+", icon: "✨", animated: true },
+    { label: "Industries Served", value: "Multiple", icon: "🌍" }
   ];
 
   return (
@@ -99,7 +102,7 @@ const ProjectsPage = () => {
       {/* Stats Section */}
       <section className="py-16 bg-muted/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
               <div 
                 key={stat.label}
@@ -107,7 +110,7 @@ const ProjectsPage = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="text-4xl mb-2">{stat.icon}</div>
-                <div className="text-3xl md:text-4xl font-poppins font-bold text-gradient mb-2">
+                <div className={`text-3xl md:text-4xl font-poppins font-bold text-gradient mb-2 ${stat.animated ? 'animate-pulse' : ''}`}>
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground">
@@ -140,8 +143,17 @@ const ProjectsPage = () => {
               >
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between mb-4">
-                    <div className={`w-14 h-14 bg-gradient-to-r ${project.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                      <project.icon className="h-7 w-7 text-white" />
+                    <div className="flex items-center space-x-3">
+                      <div className={`w-14 h-14 bg-gradient-to-r ${project.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                        <project.icon className="h-7 w-7 text-white" />
+                      </div>
+                      {project.image && (
+                        <img 
+                          src={project.image} 
+                          alt={`${project.title} logo`} 
+                          className="w-10 h-10 rounded-lg object-contain bg-white p-1"
+                        />
+                      )}
                     </div>
                     <Badge variant="outline" className="text-xs">
                       {project.category}

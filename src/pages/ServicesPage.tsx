@@ -275,7 +275,7 @@ const ServicesPage = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-3"
+              className="border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-3 bg-transparent"
             >
               <Link to="/projects">View Our Results</Link>
             </Button>

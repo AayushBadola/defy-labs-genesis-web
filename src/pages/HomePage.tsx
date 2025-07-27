@@ -5,9 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Brain, Target, TrendingUp, Users, Zap, Shield } from "lucide-react";
+import useGSAP from "../hooks/useGSAP";
 
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const gsapRef = useGSAP();
 
   useEffect(() => {
     setIsVisible(true);
@@ -50,13 +52,13 @@ const HomePage = () => {
     {
       name: "Sarah Chen",
       role: "CEO, TechStart",
-      content: "DEFY LABS transformed our conversion rate by 340% in just 3 months. Their AI-driven approach is simply revolutionary.",
+      content: "DEFY LABS transformed conversion rate by 74% in 3 Months. Their AI-driven approach is simply revolutionary.",
       rating: 5
     },
     {
       name: "Marcus Rodriguez",
       role: "Founder, ScaleUp Co",
-      content: "They don't just deliver strategies—they deliver results. Our revenue doubled within 6 months of working with DEFY LABS.",
+      content: "Our revenue increased drastically as they made our product reach the digital audience.",
       rating: 5
     },
     {
@@ -68,35 +70,36 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div ref={gsapRef} className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted/30 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-defy-purple/10 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-defy-mint/10 rounded-full blur-3xl animate-pulse-slow"></div>
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-defy-purple/10 rounded-full blur-3xl animate-float gsap-float"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-defy-mint/10 rounded-full blur-3xl animate-pulse-slow gsap-float"></div>
+          <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-gradient-to-r from-defy-purple/20 to-defy-mint/20 rounded-full blur-2xl animate-bounce-gentle gsap-rotate"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {/* Logo Animation */}
-            <div className="mb-8 inline-block">
+            <div className="mb-8 inline-block gsap-scale">
               <div className="relative">
-                <div className="w-20 h-20 bg-gradient-to-r from-defy-purple to-defy-mint rounded-2xl animate-pulse-slow mx-auto mb-4"></div>
+                <div className="w-20 h-20 bg-gradient-to-r from-defy-purple to-defy-mint rounded-2xl animate-pulse-slow animate-glow mx-auto mb-4"></div>
                 <div className="absolute inset-0 w-20 h-20 bg-gradient-to-r from-defy-purple to-defy-mint rounded-2xl animate-pulse-slow opacity-50 blur-lg mx-auto"></div>
               </div>
-              <h1 className="text-4xl md:text-6xl font-poppins font-bold text-gradient mb-2">
+              <h1 className="text-4xl md:text-6xl font-poppins font-bold text-gradient mb-2 gsap-fade-in">
                 DEFY LABS
               </h1>
             </div>
 
             {/* Main Tagline */}
-            <p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-3xl mx-auto gsap-fade-in">
               AI-driven growth strategies that treat your business like our own.
             </p>
 
             {/* Elevator Pitch */}
-            <div className="mb-8 max-w-4xl mx-auto">
+            <div className="mb-8 max-w-4xl mx-auto gsap-fade-in">
               <p className="text-lg md:text-xl text-foreground/80 mb-4">
                 We blend trillion-parameter AI with human creativity and domain expertise to optimize funnels, analyze competitors, and future-proof businesses.
               </p>
@@ -106,11 +109,11 @@ const HomePage = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 gsap-scale">
               <Button 
                 asChild
                 size="lg"
-                className="bg-gradient-to-r from-defy-purple to-defy-mint hover:opacity-90 transition-all duration-300 glow-purple text-lg px-8 py-3"
+                className="bg-gradient-to-r from-defy-purple to-defy-mint hover:opacity-90 transition-all duration-300 glow-purple text-lg px-8 py-3 animate-glow"
               >
                 <Link to="/contact">
                   Book Consultation
@@ -121,7 +124,7 @@ const HomePage = () => {
                 asChild
                 variant="outline" 
                 size="lg"
-                className="border-2 border-defy-purple/30 hover:bg-defy-purple/10 text-lg px-8 py-3"
+                className="border-2 border-defy-purple/30 hover:bg-defy-purple/10 text-lg px-8 py-3 hover:animate-glow"
               >
                 <Link to="/projects">View Our Work</Link>
               </Button>
@@ -146,12 +149,12 @@ const HomePage = () => {
             {services.map((service, index) => (
               <Card 
                 key={service.title}
-                className={`group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-border/50 hover:border-defy-purple/30 animate-fade-in`}
+                className={`group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-border/50 hover:border-defy-purple/30 animate-fade-in gsap-scale hover:animate-glow`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-6">
                   <div className="mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-defy-purple to-defy-mint rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 bg-gradient-to-r from-defy-purple to-defy-mint rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 animate-pulse-slow">
                       <service.icon className="h-6 w-6 text-white" />
                     </div>
                     <h3 className="text-xl font-poppins font-semibold mb-2 group-hover:text-defy-purple transition-colors">

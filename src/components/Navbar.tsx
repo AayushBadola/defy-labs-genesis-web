@@ -2,12 +2,14 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,6 +73,18 @@ const Navbar = () => {
                 ></span>
               </Link>
             ))}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="ml-2"
+            >
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </Button>
             <Button 
               asChild
               className="bg-gradient-to-r from-defy-purple to-defy-mint hover:opacity-90 transition-opacity font-medium"
@@ -107,7 +121,24 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-              <div className="px-3 py-2">
+              <div className="px-3 py-2 flex flex-col gap-2">
+                <Button
+                  variant="ghost"
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="w-full justify-start"
+                >
+                  {theme === "dark" ? (
+                    <>
+                      <Sun className="h-4 w-4 mr-2" />
+                      Light Mode
+                    </>
+                  ) : (
+                    <>
+                      <Moon className="h-4 w-4 mr-2" />
+                      Dark Mode
+                    </>
+                  )}
+                </Button>
                 <Button 
                   asChild
                   className="w-full bg-gradient-to-r from-defy-purple to-defy-mint hover:opacity-90 transition-opacity font-medium"
