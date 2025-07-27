@@ -6,8 +6,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Brain, Target, TrendingUp, Users, Zap, Shield } from "lucide-react";
 import useGSAP from "../hooks/useGSAP";
-import CodeAnimation from "../components/CodeAnimation";
-import LinesAnimation from "../components/LinesAnimation";
 
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -75,15 +73,11 @@ const HomePage = () => {
     <div ref={gsapRef} className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted/30 overflow-hidden">
-        {/* Background Animations */}
-        <CodeAnimation />
-        <LinesAnimation />
-        
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-defy-primary/10 rounded-full blur-3xl animate-float gsap-float"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-defy-secondary/10 rounded-full blur-3xl animate-pulse-slow gsap-float"></div>
-          <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-gradient-to-r from-defy-primary/20 to-defy-secondary/20 rounded-full blur-2xl animate-bounce-gentle gsap-rotate"></div>
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-defy-purple/10 rounded-full blur-3xl animate-float gsap-float"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-defy-mint/10 rounded-full blur-3xl animate-pulse-slow gsap-float"></div>
+          <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-gradient-to-r from-defy-purple/20 to-defy-mint/20 rounded-full blur-2xl animate-bounce-gentle gsap-rotate"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -91,12 +85,8 @@ const HomePage = () => {
             {/* Logo Animation */}
             <div className="mb-8 inline-block gsap-scale">
               <div className="relative">
-                <img 
-                  src="/lovable-uploads/ebcd58b8-1eea-43a1-a420-563e7c200fbb.png" 
-                  alt="DEFY LABS Logo" 
-                  className="w-20 h-20 object-contain animate-pulse-slow animate-glow mx-auto mb-4"
-                />
-                <div className="absolute inset-0 w-20 h-20 bg-gradient-to-r from-defy-primary/20 to-defy-secondary/20 rounded-2xl animate-pulse-slow opacity-50 blur-lg mx-auto"></div>
+                <div className="w-20 h-20 bg-gradient-to-r from-defy-purple to-defy-mint rounded-2xl animate-pulse-slow animate-glow mx-auto mb-4"></div>
+                <div className="absolute inset-0 w-20 h-20 bg-gradient-to-r from-defy-purple to-defy-mint rounded-2xl animate-pulse-slow opacity-50 blur-lg mx-auto"></div>
               </div>
               <h1 className="text-4xl md:text-6xl font-poppins font-bold text-gradient mb-2 gsap-fade-in">
                 DEFY LABS
@@ -123,7 +113,7 @@ const HomePage = () => {
               <Button 
                 asChild
                 size="lg"
-                className="bg-gradient-to-r from-defy-primary to-defy-secondary hover:opacity-90 transition-all duration-300 glow-primary text-lg px-8 py-3 animate-glow"
+                className="bg-gradient-to-r from-defy-purple to-defy-mint hover:opacity-90 transition-all duration-300 glow-purple text-lg px-8 py-3 animate-glow"
               >
                 <Link to="/contact">
                   Book Consultation
@@ -134,7 +124,7 @@ const HomePage = () => {
                 asChild
                 variant="outline" 
                 size="lg"
-                className="border-2 border-defy-primary/30 hover:bg-defy-primary/10 text-lg px-8 py-3 hover:animate-glow"
+                className="border-2 border-defy-purple/30 hover:bg-defy-purple/10 text-lg px-8 py-3 hover:animate-glow"
               >
                 <Link to="/projects">View Our Work</Link>
               </Button>
@@ -159,15 +149,15 @@ const HomePage = () => {
             {services.map((service, index) => (
               <Card 
                 key={service.title}
-                className={`group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-border/50 hover:border-defy-primary/30 animate-fade-in gsap-scale hover:animate-glow`}
+                className={`group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-border/50 hover:border-defy-purple/30 animate-fade-in gsap-scale hover:animate-glow`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-6">
                   <div className="mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-defy-primary to-defy-secondary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 animate-pulse-slow">
+                    <div className="w-12 h-12 bg-gradient-to-r from-defy-purple to-defy-mint rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 animate-pulse-slow">
                       <service.icon className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-poppins font-semibold mb-2 group-hover:text-defy-primary transition-colors">
+                    <h3 className="text-xl font-poppins font-semibold mb-2 group-hover:text-defy-purple transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-muted-foreground">
@@ -226,7 +216,7 @@ const HomePage = () => {
                 <CardContent className="p-6">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <div key={i} className="w-5 h-5 bg-gradient-to-r from-defy-primary to-defy-secondary rounded-full mr-1"></div>
+                      <div key={i} className="w-5 h-5 bg-gradient-to-r from-defy-purple to-defy-mint rounded-full mr-1"></div>
                     ))}
                   </div>
                   <p className="text-muted-foreground mb-4 italic">
@@ -244,7 +234,7 @@ const HomePage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-defy-primary to-defy-secondary">
+      <section className="py-20 bg-gradient-to-r from-defy-purple to-defy-mint">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-poppins font-bold text-white mb-6">
             Ready to DEFY Your Limits?
@@ -255,7 +245,7 @@ const HomePage = () => {
           <Button 
             asChild
             size="lg"
-            className="bg-white text-defy-primary hover:bg-white/90 text-lg px-8 py-3"
+            className="bg-white text-defy-purple hover:bg-white/90 text-lg px-8 py-3"
           >
             <Link to="/contact">
               Start Your Transformation

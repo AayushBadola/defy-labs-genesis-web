@@ -43,14 +43,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="relative">
-              <img 
-                src="/lovable-uploads/ebcd58b8-1eea-43a1-a420-563e7c200fbb.png" 
-                alt="DEFY LABS Logo" 
-                className="w-10 h-10 object-contain animate-pulse-slow"
-              />
-              <div className="absolute inset-0 w-10 h-10 bg-gradient-to-r from-defy-primary/20 to-defy-secondary/20 rounded-lg animate-pulse-slow opacity-50 blur-sm"></div>
+              <div className="w-8 h-8 bg-gradient-to-r from-defy-purple to-defy-mint rounded-lg animate-pulse-slow"></div>
+              <div className="absolute inset-0 w-8 h-8 bg-gradient-to-r from-defy-purple to-defy-mint rounded-lg animate-pulse-slow opacity-50 blur-sm"></div>
             </div>
             <span className="text-xl font-poppins font-bold text-gradient">
               DEFY LABS
@@ -65,13 +61,13 @@ const Navbar = () => {
                 to={item.path}
                 className={`text-sm font-medium transition-colors duration-200 relative group ${
                   location.pathname === item.path
-                    ? "text-defy-primary"
+                    ? "text-defy-purple"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {item.name}
                 <span 
-                  className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-defy-primary to-defy-secondary transition-all duration-300 group-hover:w-full ${
+                  className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-defy-purple to-defy-mint transition-all duration-300 group-hover:w-full ${
                     location.pathname === item.path ? "w-full" : ""
                   }`}
                 ></span>
@@ -91,7 +87,7 @@ const Navbar = () => {
             </Button>
             <Button 
               asChild
-              className="bg-gradient-to-r from-defy-primary to-defy-secondary hover:opacity-90 transition-opacity font-medium"
+              className="bg-gradient-to-r from-defy-purple to-defy-mint hover:opacity-90 transition-opacity font-medium"
             >
               <Link to="/contact">Book Consultation</Link>
             </Button>
@@ -118,7 +114,7 @@ const Navbar = () => {
                   to={item.path}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                     location.pathname === item.path
-                      ? "text-defy-primary bg-defy-primary/10"
+                      ? "text-defy-purple bg-defy-purple/10"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                   }`}
                 >
@@ -145,7 +141,7 @@ const Navbar = () => {
                 </Button>
                 <Button 
                   asChild
-                  className="w-full bg-gradient-to-r from-defy-primary to-defy-secondary hover:opacity-90 transition-opacity font-medium"
+                  className="w-full bg-gradient-to-r from-defy-purple to-defy-mint hover:opacity-90 transition-opacity font-medium"
                 >
                   <Link to="/contact">Book Consultation</Link>
                 </Button>
