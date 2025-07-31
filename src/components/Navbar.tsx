@@ -45,8 +45,12 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="relative">
-              <div className="w-8 h-8 bg-gradient-to-r from-defy-purple to-defy-mint rounded-lg animate-pulse-slow"></div>
-              <div className="absolute inset-0 w-8 h-8 bg-gradient-to-r from-defy-purple to-defy-mint rounded-lg animate-pulse-slow opacity-50 blur-sm"></div>
+              <img 
+                src="/lovable-uploads/ea370277-e89c-4430-af1d-d7372c3e18ef.png" 
+                alt="DEFY LABS" 
+                className="w-8 h-8 rounded-lg"
+              />
+              <div className="absolute inset-0 w-8 h-8 bg-gradient-to-r from-defy-purple to-defy-mint rounded-lg animate-pulse-slow opacity-30 blur-sm"></div>
             </div>
             <span className="text-xl font-poppins font-bold text-gradient">
               DEFY LABS

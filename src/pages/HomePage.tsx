@@ -85,8 +85,12 @@ const HomePage = () => {
             {/* Logo Animation */}
             <div className="mb-8 inline-block gsap-scale">
               <div className="relative">
-                <div className="w-20 h-20 bg-gradient-to-r from-defy-purple to-defy-mint rounded-2xl animate-pulse-slow animate-glow mx-auto mb-4"></div>
-                <div className="absolute inset-0 w-20 h-20 bg-gradient-to-r from-defy-purple to-defy-mint rounded-2xl animate-pulse-slow opacity-50 blur-lg mx-auto"></div>
+                <img 
+                  src="/lovable-uploads/ea370277-e89c-4430-af1d-d7372c3e18ef.png" 
+                  alt="DEFY LABS" 
+                  className="w-20 h-20 rounded-2xl mx-auto mb-4 animate-pulse-slow"
+                />
+                <div className="absolute inset-0 w-20 h-20 bg-gradient-to-r from-defy-purple to-defy-mint rounded-2xl animate-pulse-slow opacity-30 blur-lg mx-auto"></div>
               </div>
               <h1 className="text-4xl md:text-6xl font-poppins font-bold text-gradient mb-2 gsap-fade-in">
                 DEFY LABS
