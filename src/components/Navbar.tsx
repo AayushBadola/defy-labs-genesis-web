@@ -45,14 +45,11 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="relative">
-              <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/ea370277-e89c-4430-af1d-d7372c3e18ef.png" 
-                  alt="DEFY LABS" 
-                  className="w-9 h-9 rounded-lg brightness-110 contrast-110"
-                />
-              </div>
-              <div className="absolute inset-0 w-10 h-10 bg-gradient-to-r from-white/10 to-white/5 rounded-lg animate-pulse-slow blur-sm"></div>
+              <img 
+                src="/lovable-uploads/ea370277-e89c-4430-af1d-d7372c3e18ef.png" 
+                alt="DEFY LABS" 
+                className="w-12 h-12 rounded-lg brightness-110 contrast-110"
+              />
             </div>
             <span className="text-xl font-poppins font-bold text-gradient">
               DEFY LABS
