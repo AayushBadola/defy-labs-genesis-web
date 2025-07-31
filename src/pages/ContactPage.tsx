@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, Clock, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Clock, CheckCircle, Heart, Zap, Target } from "lucide-react";
 
 const ContactPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -64,12 +64,6 @@ ${formData.message}
       description: "Get in touch for any inquiries"
     },
     {
-      icon: Phone,
-      label: "Phone",
-      value: "+1 (555) 123-4567",
-      description: "Mon-Fri, 9AM-6PM EST"
-    },
-    {
       icon: MapPin,
       label: "Location",
       value: "Remote-First",
@@ -111,7 +105,7 @@ ${formData.message}
       {/* Contact Methods Grid */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {contactInfo.map((info, index) => (
               <Card 
                 key={info.label}
@@ -252,17 +246,23 @@ ${formData.message}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-4xl mb-4">🤝</div>
+              <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="h-8 w-8 text-white" />
+              </div>
               <h3 className="font-poppins font-semibold mb-2">No Pressure</h3>
               <p className="text-sm text-muted-foreground">Our consultation is completely pressure-free. We're here to help, not to sell.</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl mb-4">⚡</div>
+              <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="h-8 w-8 text-white" />
+              </div>
               <h3 className="font-poppins font-semibold mb-2">Quick Setup</h3>
               <p className="text-sm text-muted-foreground">Most clients see results within the first 30 days of working with us.</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl mb-4">🎯</div>
+              <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Target className="h-8 w-8 text-white" />
+              </div>
               <h3 className="font-poppins font-semibold mb-2">Custom Solutions</h3>
               <p className="text-sm text-muted-foreground">Every strategy is tailored specifically to your business and industry.</p>
             </div>

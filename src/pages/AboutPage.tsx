@@ -174,17 +174,17 @@ const AboutPage = () => {
               {
                 name: "IBM AI Certified",
                 description: "Advanced AI and machine learning expertise validated by IBM's rigorous certification program.",
-                badge: "🤖"
+                logo: "/ibm-logo.png"
               },
               {
-                name: "Microsoft Partner",
-                description: "Certified partner with deep expertise in Microsoft's AI and cloud technologies.",
-                badge: "☁️"
+                name: "Microsoft Techniques User",
+                description: "Certified expertise in Microsoft's AI and cloud technologies for enterprise solutions.",
+                logo: "/microsoft-logo.svg"
               },
               {
-                name: "Google Skills Boost",
+                name: "Google Cloud Tech Expertise",
                 description: "Google Cloud certified with expertise in data analytics and AI/ML solutions.",
-                badge: "📊"
+                logo: "/google-cloud-logo.svg"
               }
             ].map((cert, index) => (
               <Card 
@@ -193,7 +193,9 @@ const AboutPage = () => {
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <CardContent className="p-6 text-center">
-                  <div className="text-4xl mb-4">{cert.badge}</div>
+                  <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <img src={cert.logo} alt={cert.name} className="w-12 h-12 object-contain" />
+                  </div>
                   <h3 className="text-lg font-poppins font-semibold mb-2">{cert.name}</h3>
                   <p className="text-sm text-muted-foreground">{cert.description}</p>
                 </CardContent>

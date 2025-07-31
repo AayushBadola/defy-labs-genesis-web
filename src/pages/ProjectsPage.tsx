@@ -17,13 +17,13 @@ const ProjectsPage = () => {
     {
       id: "market-predictor",
       title: "Market Predictor",
-      description: "AI-powered market analysis system that predicted industry trends with 94% accuracy",
+      description: "AI-powered market analysis system that predicted industry trends with 90%+ accuracy",
       category: "AI Analytics",
       icon: TrendingUp,
       results: [
-        "94% prediction accuracy",
-        "3-month early trend detection",
-        "40% competitive advantage"
+        "90%+ prediction accuracy",
+        "67-80% ROI on average",
+        "Real-time market insights"
       ],
       image: "/lovable-uploads/ebcd58b8-1eea-43a1-a420-563e7c200fbb.png",
       tags: ["AI", "Predictive Analytics", "Market Research"],
@@ -36,9 +36,9 @@ const ProjectsPage = () => {
       category: "Content Optimization",
       icon: Target,
       results: [
-        "340% engagement increase",
+        "85% engagement increase",
         "65% higher click-through rates",
-        "280% social media growth"
+        "90% content performance boost"
       ],
       image: "/lovable-uploads/ebcd58b8-1eea-43a1-a420-563e7c200fbb.png",
       tags: ["Content Marketing", "A/B Testing", "Optimization"],
@@ -51,24 +51,24 @@ const ProjectsPage = () => {
       category: "Conversion Optimization",
       icon: Brain,
       results: [
-        "450% conversion rate increase",
-        "75% reduction in acquisition cost",
-        "12x ROI improvement"
+        "75% conversion rate increase",
+        "60% reduction in acquisition cost",
+        "3.2x ROI improvement"
       ],
       image: "/lovable-uploads/ebcd58b8-1eea-43a1-a420-563e7c200fbb.png",
       tags: ["Funnel Optimization", "Automation", "CRO"],
       color: "from-purple-500 to-pink-600"
     },
     {
-      id: "competitor-weakness-finder",
-      title: "Competitor Weakness Finder",
+      id: "competitor-analysis",
+      title: "Competitor Analysis",
       description: "Comprehensive competitive intelligence platform revealing market gaps and opportunities",
       category: "Market Intelligence",
       icon: Search,
       results: [
-        "Identified 23 market gaps",
-        "150% increase in market reach",
-        "6-month competitive lead"
+        "Identified 15+ market gaps",
+        "95% competitive intelligence accuracy",
+        "Strategic advantage insights"
       ],
       image: "/lovable-uploads/ebcd58b8-1eea-43a1-a420-563e7c200fbb.png",
       tags: ["Competitive Analysis", "Market Research", "Strategy"],
