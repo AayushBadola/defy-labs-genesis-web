@@ -89,7 +89,7 @@ const HomePage = () => {
                   <img 
                     src="/lovable-uploads/ea370277-e89c-4430-af1d-d7372c3e18ef.png" 
                     alt="DEFY LABS" 
-                    className="w-20 h-20 rounded-2xl brightness-125 contrast-110 animate-pulse-slow"
+                    className="w-22 h-22 rounded-2xl brightness-125 contrast-110 animate-pulse-slow"
                   />
                 </div>
                 <div className="absolute inset-0 w-24 h-24 bg-gradient-to-r from-white/10 to-white/5 rounded-2xl animate-pulse-slow opacity-50 blur-lg mx-auto"></div>

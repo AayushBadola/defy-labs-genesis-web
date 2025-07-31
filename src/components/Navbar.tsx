@@ -49,7 +49,7 @@ const Navbar = () => {
                 <img 
                   src="/lovable-uploads/ea370277-e89c-4430-af1d-d7372c3e18ef.png" 
                   alt="DEFY LABS" 
-                  className="w-8 h-8 rounded-lg brightness-110 contrast-110"
+                  className="w-9 h-9 rounded-lg brightness-110 contrast-110"
                 />
               </div>
               <div className="absolute inset-0 w-10 h-10 bg-gradient-to-r from-white/10 to-white/5 rounded-lg animate-pulse-slow blur-sm"></div>
