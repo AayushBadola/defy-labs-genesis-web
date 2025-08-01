@@ -83,7 +83,7 @@ const HomePage = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {/* Logo Animation */}
-            <div className="mb-8 inline-block gsap-scale">
+            <div className="mb-2 inline-block gsap-scale">
               <div className="relative">
                 <img 
                   src="/lovable-uploads/ea370277-e89c-4430-af1d-d7372c3e18ef.png" 
