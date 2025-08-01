@@ -88,7 +88,7 @@ const HomePage = () => {
                 <img 
                   src="/lovable-uploads/ea370277-e89c-4430-af1d-d7372c3e18ef.png" 
                   alt="DEFY LABS" 
-                  className="w-28 h-28 rounded-2xl mx-auto mb-4 brightness-125 contrast-110 animate-pulse-slow"
+                  className="w-36 h-36 rounded-2xl mx-auto mb-4 brightness-125 contrast-110 animate-pulse-slow"
                 />
               </div>
               <h1 className="text-4xl md:text-6xl font-poppins font-bold text-gradient mb-2 gsap-fade-in">
