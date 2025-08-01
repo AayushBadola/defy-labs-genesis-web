@@ -91,14 +91,14 @@ const ProjectDetail = () => {
       description: "Comprehensive competitive intelligence platform revealing market gaps and opportunities",
       challenge: "Client operated in a highly competitive market and needed deep insights into competitor strategies to identify opportunities for differentiation.",
       solution: "We created an AI-powered competitive intelligence system that continuously monitors competitors and identifies strategic weaknesses and market gaps.",
-      outcome: "Identified 23 exploitable market gaps, leading to 200% market share growth and 6-month competitive advantage. Through our collaboration, higher optimization becomes achievable - ROI increases with every returned collaboration.",
+      outcome: "Identified 23 exploitable market gaps, leading to 57%+ market share growth and 6-month competitive advantage. Through our collaboration, higher optimization becomes achievable - ROI increases with every returned collaboration.",
       icon: Search,
       color: "from-orange-500 to-red-600",
       results: [
         { metric: "Market Gaps Found", value: "23", description: "Exploitable opportunities identified" },
-        { metric: "Market Share Growth", value: "200%", description: "Increase in client's market position" },
+        { metric: "Market Share Growth", value: "57%+", description: "Increase in client's market position" },
         { metric: "Competitive Lead", value: "6 Months", description: "Time advantage over competitors" },
-        { metric: "Revenue Impact", value: "$2M", description: "Additional revenue generated" }
+        { metric: "Strategic Advantage", value: "85%", description: "Improvement in competitive positioning" }
       ],
       technologies: ["Web Scraping", "Sentiment Analysis", "Market Intelligence", "Predictive Modeling"],
       nextSteps: "Real-time competitive alerts and automated strategy recommendations"
