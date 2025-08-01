@@ -48,7 +48,7 @@ const Navbar = () => {
               <img 
                 src="/lovable-uploads/ea370277-e89c-4430-af1d-d7372c3e18ef.png" 
                 alt="DEFY LABS" 
-                className="w-16 h-16 rounded-lg brightness-110 contrast-110"
+                className="w-56 h-56 rounded-lg brightness-110 contrast-110"
               />
             </div>
             <span className="text-xl font-poppins font-bold text-gradient">
