@@ -76,22 +76,10 @@ const AboutPage = () => {
 
       {/* Founder Section */}
       <section className="py-20 bg-muted/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Founder Image Placeholder */}
-            <div className="order-2 lg:order-1">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-defy-purple/20 to-defy-mint/20 rounded-3xl blur-2xl"></div>
-                <div className="relative bg-gradient-to-br from-muted/50 to-background rounded-3xl p-8 border border-border/50">
-                  <div className="aspect-square bg-gradient-to-br from-defy-purple/10 to-defy-mint/10 rounded-2xl flex items-center justify-center">
-                    <div className="text-8xl">👨‍💼</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
             {/* Founder Story */}
-            <div className="order-1 lg:order-2">
+            <div>
               <h2 className="text-3xl md:text-4xl font-poppins font-bold mb-6">
                 Meet Aayush
               </h2>
