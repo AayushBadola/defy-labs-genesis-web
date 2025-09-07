@@ -5,9 +5,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
+import { useToast } from "@/hooks/use-toast";
 import { Mail, MapPin, Clock, CheckCircle, Heart, Zap, Target } from "lucide-react";
 
 const ContactPage = () => {
+  const { toast } = useToast();
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -42,6 +44,13 @@ const ContactPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Show success toast
+    toast({
+      title: "Message Prepared!",
+      description: "Your email client will open to send the message. Please click send in your email app.",
+    });
+    
     // Create mailto link to send email
     const subject = encodeURIComponent(`Contact Form Submission from ${formData.name}`);
     const body = encodeURIComponent(`
@@ -52,6 +61,14 @@ Company: ${formData.company}
 Message:
 ${formData.message}
     `);
+    
+    // Clear form after submission
+    setFormData({
+      name: '',
+      email: '',
+      company: '',
+      message: ''
+    });
     
     window.location.href = `mailto:aayush.badola2@gmail.com?subject=${subject}&body=${body}`;
   };
