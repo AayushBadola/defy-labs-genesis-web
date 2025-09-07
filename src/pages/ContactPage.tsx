@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { Mail, MapPin, Clock, CheckCircle, Heart, Zap, Target } from "lucide-react";
 
 const ContactPage = () => {
@@ -48,24 +49,39 @@ const ContactPage = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate sending (since we need Supabase for real email sending)
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Show success toast with animation
-      toast({
-        title: "✅ Message Sent Successfully!",
-        description: "Thank you for reaching out! We'll get back to you within 24 hours.",
+      // Send email using Supabase Edge Function
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message
+        }
       });
+
+      if (error) {
+        throw error;
+      }
+
+      if (data.success) {
+        toast({
+          title: "✅ Message Sent Successfully!",
+          description: "Thank you for reaching out! We'll get back to you within 24 hours.",
+        });
+        
+        // Clear form after successful submission
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          message: ''
+        });
+      } else {
+        throw new Error(data.error || "Failed to send message");
+      }
       
-      // Clear form after successful submission
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        message: ''
-      });
-      
-    } catch (error) {
+    } catch (error: any) {
+      console.error("Error sending message:", error);
       toast({
         title: "❌ Something went wrong",
         description: "Please try again or contact us directly at aayush.badola2@gmail.com",
