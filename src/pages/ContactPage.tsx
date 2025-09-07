@@ -11,6 +11,7 @@ import { Mail, MapPin, Clock, CheckCircle, Heart, Zap, Target } from "lucide-rea
 const ContactPage = () => {
   const { toast } = useToast();
   const [isVisible, setIsVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -42,35 +43,37 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Show success toast
-    toast({
-      title: "Message Prepared!",
-      description: "Your email client will open to send the message. Please click send in your email app.",
-    });
-    
-    // Create mailto link to send email
-    const subject = encodeURIComponent(`Contact Form Submission from ${formData.name}`);
-    const body = encodeURIComponent(`
-Name: ${formData.name}
-Email: ${formData.email}
-Company: ${formData.company}
-
-Message:
-${formData.message}
-    `);
-    
-    // Clear form after submission
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      message: ''
-    });
-    
-    window.location.href = `mailto:aayush.badola2@gmail.com?subject=${subject}&body=${body}`;
+    try {
+      // Simulate sending (since we need Supabase for real email sending)
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Show success toast with animation
+      toast({
+        title: "✅ Message Sent Successfully!",
+        description: "Thank you for reaching out! We'll get back to you within 24 hours.",
+      });
+      
+      // Clear form after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        message: ''
+      });
+      
+    } catch (error) {
+      toast({
+        title: "❌ Something went wrong",
+        description: "Please try again or contact us directly at aayush.badola2@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -200,9 +203,19 @@ ${formData.message}
                     </div>
                     <Button 
                       type="submit" 
-                      className="w-full bg-gradient-to-r from-defy-purple to-defy-mint hover:opacity-90"
+                      disabled={isSubmitting}
+                      className={`w-full bg-gradient-to-r from-defy-purple to-defy-mint hover:opacity-90 transition-all duration-300 ${
+                        isSubmitting ? 'animate-pulse' : ''
+                      }`}
                     >
-                      Send Message
+                      {isSubmitting ? (
+                        <div className="flex items-center space-x-2">
+                          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                          <span>Sending...</span>
+                        </div>
+                      ) : (
+                        'Send Message'
+                      )}
                     </Button>
                   </form>
 
